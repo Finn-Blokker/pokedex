@@ -25,3 +25,15 @@
 #output{
     color: black;
 }
+#namebox {
+     color: cornflowerblue;
+     border: black solid 5px ;
+     height: 100px;
+     width: 100px;
+ }
+#statsbox {
+    color: cornflowerblue;
+    border: black solid 5px;
+    height: 100px;
+    width: 100px;
+}
