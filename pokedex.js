@@ -1,6 +1,6 @@
 window.addEventListener("load", function () {
     console.log("de pagina is geladen!")
-});
+}); 
 document.querySelector('#search_button').addEventListener('click', async function () {
     let pokemon = document.getElementById("myForm").value;
     let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
