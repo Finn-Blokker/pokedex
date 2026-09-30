@@ -10,6 +10,8 @@
 .output_box {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    align-content: space-evenly;
     height: 280px;
     width: 275px;
     background-color: gray;
@@ -25,11 +27,15 @@
 #output{
     color: black;
 }
+#rowrow{
+    display: flex;
+    flex-direction: row;
+}
 #namebox {
      color: cornflowerblue;
      border: black solid 5px ;
      height: 100px;
-     width: 100px;
+     width: 150px;
  }
 #statsbox {
     color: cornflowerblue;

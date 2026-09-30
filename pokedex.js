@@ -14,7 +14,12 @@ document.querySelector('#search_button').addEventListener('click', async functio
 </p>`
     document.querySelector("#namebox").innerHTML = `<p>naam = ${pokemons.name} <br>
 height = ${pokemons.height} <br>
-id = ${pokemons.id} <br> <br>`});
+id = ${pokemons.id} <br> <br>`
+
+document.querySelector("#statsbox").innerHTML = `<p> HP= ${pokemons.stats[0].base_stat} <br>
+atk= ${pokemons.stats[1].base_stat} <br>
+ Def= ${pokemons.stats[2].base_stat} <br>
+ speed= ${pokemons.stats[5].base_stat} <br> <br>`});
 
 
 
