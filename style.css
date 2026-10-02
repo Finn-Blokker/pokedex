@@ -32,14 +32,28 @@
     flex-direction: row;
 }
 #namebox {
+    display: flex;
+    justify-content: end;
      color: cornflowerblue;
      border: black solid 5px ;
      height: 100px;
      width: 150px;
  }
 #statsbox {
+    display: flex;
+    justify-items: end;
     color: cornflowerblue;
     border: black solid 5px;
     height: 100px;
     width: 100px;
+}
+
+#boxybox{
+    display: flex;
+    justify-content: center;
+width: 768px;
+    height: 603px;
+    border: blue solid 5px;
+    background-image: url("pokemon_website_background_2.png");
+    background-size: cover;
 }
