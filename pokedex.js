@@ -10,8 +10,6 @@ document.querySelector('#search_button').addEventListener('click', async functio
     document.querySelector("#imagebox").innerHTML =`
 <img alt="${pokemons.name}" src="${pokemons.sprites.front_default}">
 <img alt="${pokemons.name}" src="${pokemons.sprites.back_default}"><br>
-<img alt="${pokemons.name}" src="${pokemons.sprites.front_shiny}">
-<img alt="${pokemons.name}" src="${pokemons.sprites.back_shiny}"><br>
 </p>`
 
 document.querySelector("#statsbox").innerHTML = `<p> HP= ${pokemons.stats[0].base_stat} <br>
@@ -19,9 +17,11 @@ Atk = ${pokemons.stats[1].base_stat} <br>
  speed= ${pokemons.stats[5].base_stat} <br> 
   Def= ${pokemons.stats[2].base_stat} <br>`
 
-    document.querySelector('#nextpage').addEventListener('click', function () {
+    document.querySelector('#scrollstats').addEventListener('click', function () {
         const content = document.getElementById("statsbox");
         if (content.className === "secondpage" ){
+            document.getElementById("scrollstats").innerText = "⬇️"
+            document.getElementById("scrollstats").style.alignItems = "end"
         content.innerHTML =
             `<p>
             HP= ${pokemons.stats[0].base_stat} <br>
@@ -31,6 +31,8 @@ Atk = ${pokemons.stats[1].base_stat} <br>
             content.className = "firstpage"
         }
         else if (content.className === "firstpage" ){
+            document.getElementById("scrollstats").innerText = "️⬆️"
+            document.getElementById("scrollstats").style.alignItems = "start"
         content.className = "secondpage"
         content.innerHTML = 
             `<p>
