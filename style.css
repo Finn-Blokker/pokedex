@@ -57,6 +57,14 @@
     color: cornflowerblue;
     width: 26%;
 }
+#backpokemon {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
+    color: cornflowerblue;
+    width: 26%;
+}
 #boxybox{
     display: flex;
     flex-direction: column;
@@ -89,4 +97,10 @@
     width: 100%;
     height: 24%;
     justify-content: end;
+}
+.stack{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
 }
