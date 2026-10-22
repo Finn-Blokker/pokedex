@@ -50,6 +50,7 @@ function nextpokemon(){
     searchpokemon()
 }
 
+
 document.querySelector("#myForm").addEventListener('keydown', function (keypress){
     if (keypress.key === 'Enter') {
         searchpokemon();

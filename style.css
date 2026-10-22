@@ -35,47 +35,68 @@
 #statsbox {
     display: flex;
     justify-content: center;
-
     text-align: center;
     color: cornflowerblue;
     width: 60%;
     flex-wrap: wrap;
 }
-#imagebox{
+#box1{
+    display: flex;
+    flex-wrap: wrap;
+justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    border: brown solid 5px;
+    height: 452px;
+    width: 470.1px;
+}
+#zoekbalk{
+    display: flex;
+    justify-content: center;
+    width: 290px;
+    height: 50px;
+    border: yellow solid 5px;
+    margin-top: 80px;
+}
+#naaminbox{
+    display: flex;
+    justify-content: center;
+    width: 295px;
+    height: 50px;
+    border: red solid 5px;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+#box2 {
     display: flex;
     flex-wrap: wrap;
 
-    border: brown solid 5px;
-    height:454px;
-    width: 955px;
+    border: yellow solid 5px;
+    height: 452px;
+    width: 470.1px;
 }
-#niks {
-    display: flex;
-    flex-wrap: wrap;
-    width: 955px;
-    border: gold solid 5px;
-    height: 10px;
-}
-#niks1 {
-    display: flex;
-    flex-wrap: wrap;
-    width: 500px;
-    border: gold solid 5px;
-    height: 10px;
-}
+
+
 #pokemonvoorkant {
     display: flex;
-    flex-wrap: wrap;
-    border: rebeccapurple solid 10px;
-    height: 200px;
-    width: 400px;
+    justify-content: start;
+
+    width: 150px;
+    height: 250px;
+    border: pink solid 5px;
+    margin-top: 40px;
 }
 #pokemonachterkant {
     display: flex;
-    flex-wrap: wrap;
-    border: yellow solid 10px;
-    height: 20px;
-    width: 40px;
+    justify-content: center;
+
+    width: 150px;
+    height: 250px;
+    border: pink solid 5px;
+    margin-top: 40px;
+
 }
 #naampokemon {
     display: flex;
@@ -85,14 +106,7 @@
     width: 40px;
 }
 
-    #tussenbalk{
-    display: flex;
-    justify-content: start;
-        flex-wrap: wrap;
-    border: pink solid 5px;
-    height: 10px;
-    width: 955px;
-}
+
 #scrollstats{
     display: flex;
     justify-content: start;
@@ -109,6 +123,7 @@
     text-align: center;
     color: cornflowerblue;
     width: 26%;
+    flex-wrap: wrap;
 }
 #backpokemon {
     display: flex;
@@ -120,18 +135,20 @@
 }
 #boxybox{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap;
     width: 960px;
     height: 629px;
     border: blue solid 5px;
-    background-image: url("pokemon.png");
+    background-image: url("/photo/pokemon_background_FINAL_FORM.png");
     background-size: cover;
-    align-items: end;
+
 }
 #pokedex{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 
@@ -144,6 +161,7 @@
 .stats{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     width: 100%;
     height: 24%;
     justify-content: end;
@@ -153,4 +171,7 @@
     justify-content: center;
     flex-direction: column;
     
+}
+.background {
+    background-color: black;
 }
