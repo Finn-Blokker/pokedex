@@ -1,10 +1,16 @@
+let pokemons;
+let pokemonid = 0;
 window.addEventListener("load", function () {
     console.log("de pagina is geladen!")
 });
-async function searchpokemon() {
-        let nr = document.getElementById("myForm").value;
-        let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${nr}`)
-        let pokemons = await response.json()
+async function searchpokemon(search = document.getElementById("myForm").value) {
+        let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${String(search).trim().toLowerCase()}`);
+        if (!response.ok) {
+            alert("pokemon not found");
+            return;
+        }
+        pokemons = await response.json()
+        pokemonid = pokemons.id
         console.log(pokemons)
     
         document.querySelector("#pokemonvoorkant").innerHTML = `
@@ -21,69 +27,51 @@ async function searchpokemon() {
     "Atk = " + `${pokemons.stats[1].base_stat}` + "\r\n" +
     "Sp = " + `${pokemons.stats[5].base_stat}` + "\r\n" +
     "Def = " + `${pokemons.stats[2].base_stat}` + "\r\n"
-    
-    
-    document.getElementById("myForm").value = `${pokemons.id}`
-    
+
+    document.getElementById("myForm").value = pokemons.name
     settypes(pokemons)
-    
-    document.querySelector('#scrollstats').addEventListener('click', function () {
-        const content = document.getElementById("statsbox");
-        if (content.className === "secondpage" ){
-            setstats(pokemons)
-        }
-        else if (content.className === "firstpage" ) {
-            setstats2(pokemons) }})}
-
+    return pokemons
+     }
 function nextpokemon(){
-    let nr = document.getElementById("myForm").value;
-    console.log(nr)
-    document.getElementById("myForm").value = Number(nr) + 1
-    searchpokemon(nr)
+    searchpokemon(pokemonid + 1)
 }
-
 function backpokemon(){
-    let nr = document.getElementById("myForm").value;
-    console.log(nr)
-    document.getElementById("myForm").value = Number(nr) - 1
-    searchpokemon(nr)
+    searchpokemon(pokemonid - 1)
     }
-    
 function settypes(pokemons){
     document.getElementById("typebox").textContent = `${pokemons.types[0].type.name}`
+    document.getElementById("typebox2").textContent = `${pokemons.types[1].type.name}`
 }
 function statschanger() {
     const content = document.getElementById("statsbox");
-
     if (content.className === "secondpage") {
         setstats();
     } else if (content.className === "firstpage") {
         setstats2();
     }
 }
-function setstats(currentpokemon){
+function setstats(){
     const content = document.getElementById("statsbox")
     document.getElementById("scrollstats").innerText = "⬇️"
     document.getElementById("scrollstats").style.alignItems = "end"
 
     content.className = "firstpage"
     content.textContent = "\r\n" +
-        "HP = " + `${currentpokemon.stats[0].base_stat}` +  "\r\n" +
-        "Atk = " + `${currentpokemon.stats[1].base_stat}` + "\r\n" +
-        "Sp = " + `${currentpokemon.stats[5].base_stat}` + "\r\n" +
-        "Def = " + `${currentpokemon.stats[2].base_stat}`
+        "HP = " + `${pokemons.stats[0].base_stat}` +  "\r\n" +
+        "Atk = " + `${pokemons.stats[1].base_stat}` + "\r\n" +
+        "Sp = " + `${pokemons.stats[5].base_stat}` + "\r\n" +
+        "Def = " + `${pokemons.stats[2].base_stat}`
 }
-function setstats2(currentpokemon){
+function setstats2(){
     const content = document.getElementById("statsbox")
     document.getElementById("scrollstats").innerText = "️⬆️"
     document.getElementById("scrollstats").style.alignItems = "start"
-    console.log(currentpokemon)
     content.className = "secondpage"
     content.textContent = "\r\n" +
-        "Height =" + `${currentpokemon.height}` + "\r\n" +
-        "SpAtk =" + `${currentpokemon.stats[3].base_stat}`  + "\r\n" +
-        "Weight = " + `${currentpokemon.stats[5].base_stat}`  + "\r\n" +
-        "SpDef=" + ` ${currentpokemon.stats[4].base_stat}`
+        "Height =" + `${pokemons.height}` + "\r\n" +
+        "SpAtk =" + `${pokemons.stats[3].base_stat}`  + "\r\n" +
+        "Weight = " + `${pokemons.stats[5].base_stat}`  + "\r\n" +
+        "SpDef=" + ` ${pokemons.stats[4].base_stat}`
 }
 document.querySelector("#myForm").addEventListener('keydown', function (keypress) {
     if (keypress.key === 'Enter') {
