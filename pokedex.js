@@ -39,8 +39,8 @@ function backpokemon(){
     searchpokemon(pokemonid - 1)
     }
 function settypes(pokemons){
-    document.getElementById("typebox").textContent = `${pokemons.types[0].type.name}`
-    document.getElementById("typebox2").textContent = `${pokemons.types[1].type.name}`
+    document.getElementById("typebox").innerHTML = `<img alt="${pokemons.types[0].type.name}" src="/icons/${pokemons.types[0].type.name}.svg" height="30px" width="30px">`
+    document.getElementById("typebox2").innerHTML = `<img alt="${pokemons.types[1].type.name}" src="/icons/${pokemons.types[1].type.name}.svg" height="30px" width="30px">`
 }
 function statschanger() {
     const content = document.getElementById("statsbox");
