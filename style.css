@@ -22,7 +22,10 @@
     background-color: red;
 }
 #myForm{
-    float: left;
+    display: flex;
+    background-color: #FFFFDE;
+    border: none;
+    
 }
 #output{
     color: black;

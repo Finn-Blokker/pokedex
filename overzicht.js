@@ -5,7 +5,7 @@ async function searchpokemon(search = document.getElementById("myForm").value) {
     await makedivs();
 }
 async function makedivs() {
-    document.querySelectorAll(".test").forEach(div => div.remove());
+    document.querySelectorAll(".overviewbox").forEach(img => img.remove());
     let startId = pokemons.id;
     let requests = [];
     
