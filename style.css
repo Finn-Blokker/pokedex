@@ -196,3 +196,23 @@ justify-content: center;
     display: flex;
     flex-direction: row;
 }
+.overviewbox{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: aquamarine 5px solid;
+    height: 96px;
+    width: 96px;
+}
+#overzicht{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    width: 400px;
+    flex-wrap: wrap;
+}
+.midden{
+    display: flex;
+    justify-content: center;
+}
