@@ -65,10 +65,10 @@ justify-content: center;
 #naaminbox{
     display: flex;
 
-    width: 295px;
-    height: 50px;
+    width: 240px;
+    height: 90px;
     border: red solid 5px;
-    margin-top: 50px;
+    margin-top: 10px;
     margin-left: 50px;
     white-space: pre-line;
 }
@@ -80,12 +80,15 @@ justify-content: center;
     border: blue solid 5px;
     margin-top: 50px;
 
+
 }#typebox2{
     display: flex;
     justify-content: center;
     width: 55px;
     height: 25px;
     border: black solid 5px;
+    margin-left: -60px;
+    margin-top: 15px;
 }
 
 #box2 {
