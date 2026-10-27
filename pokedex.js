@@ -6,7 +6,8 @@ window.addEventListener("load", function () {
 async function searchpokemon(search = document.getElementById("myForm").value) {
         let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${String(search).trim().toLowerCase()}`);
         if (!response.ok) {
-            alert("pokemon not found");
+            (document.querySelector("#pokemonachterkant").innerHTML = "<img src='photo/MissingNoMirrored.png' height='250' width='250'>");
+            (document.querySelector("#pokemonvoorkant").innerHTML = "<img src='photo/MissingNo.png' height='250' width='250'>");
             return;
         }
         pokemons = await response.json()
@@ -17,10 +18,12 @@ async function searchpokemon(search = document.getElementById("myForm").value) {
 <img alt="${pokemons.name}" src="${pokemons.sprites.front_default}" height="250px" width="250px"><br> `
      document.querySelector("#pokemonachterkant").innerHTML = `
 <img class="naar-onder" alt="${pokemons.name}" src="${pokemons.sprites.back_default}" height="250px" width="250px">`
-    
+
+
     document.querySelector("#naaminbox").textContent = 
     `${pokemons.name}` + "\r\n" + 
     "id =" +`${pokemons.id}`
+
     
     document.querySelector("#statsbox").textContent = "\r\n" +
     "HP = " + `${pokemons.stats[0].base_stat}` +  "\r\n" + 
