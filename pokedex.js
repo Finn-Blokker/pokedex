@@ -5,20 +5,25 @@ window.addEventListener("load", function () {
 });
 async function searchpokemon(search = document.getElementById("myForm").value) {
         let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${String(search).trim().toLowerCase()}`);
-        if (!response.ok) {
-            (document.querySelector("#pokemonachterkant").innerHTML = "<img src='photo/MissingNoMirrored.png' height='250' width='250'>");
-            (document.querySelector("#pokemonvoorkant").innerHTML = "<img src='photo/MissingNo.png' height='250' width='250'>");
-            return;
+        
+        if (search === "0") {
+            missingno()
         }
+        else {
         pokemons = await response.json()
         pokemonid = pokemons.id
         console.log(pokemons)
+
+    if (!response.ok){
+        alert("pokemon niet gevonden")
+    }
     
         document.querySelector("#pokemonvoorkant").innerHTML = `
 <img alt="${pokemons.name}" src="${pokemons.sprites.front_default}" height="250px" width="250px"><br> `
      document.querySelector("#pokemonachterkant").innerHTML = `
 <img class="naar-onder" alt="${pokemons.name}" src="${pokemons.sprites.back_default}" height="250px" width="250px">`
-
+    
+    
 
     document.querySelector("#naaminbox").textContent = 
     `${pokemons.name}` + "\r\n" + 
@@ -35,7 +40,7 @@ async function searchpokemon(search = document.getElementById("myForm").value) {
     settypes(pokemons)
     await makedivs()
     return pokemons
-     }
+     }}
 function nextpokemon(){
     searchpokemon(pokemonid + 1)
     makedivs()
@@ -102,6 +107,22 @@ async function makedivs() {
         a.appendChild(img);
         document.getElementById("overzicht").appendChild(div);
     });
+}
+function missingno(){
+    pokemonid = 0;
+    document.querySelector("#pokemonachterkant").innerHTML =
+        "<img src='photo/MissingNoMirrored.png' height='250' width='250'>";
+    document.querySelector("#pokemonvoorkant").innerHTML =
+        "<img src='photo/MissingNo.png' height='250' width='250'>";
+    document.querySelector("#naaminbox").textContent =
+        `missingno` + "\r\n" +
+        "id = missingno"
+    document.getElementById("typebox").textContent = "type: bird"
+    document.getElementById("statsbox").textContent = "\r\n" +
+        "HP = 33" + "\r\n" +
+        "Atk = 136" + "\r\n" +
+        "Sp = 29" + "\r\n" +
+        "Def = 0" 
 }
 document.querySelector("#myForm").addEventListener('keydown', function (keypress) {
     if (keypress.key === 'Enter') {

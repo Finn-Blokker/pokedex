@@ -7,6 +7,7 @@
     text-align: center;
     background-color: gray;
 }
+
 .output_box {
     display: flex;
     justify-content: center;
@@ -15,25 +16,28 @@
     height: 280px;
     width: 275px;
     background-color: gray;
-
 }
-#search_form{
+
+#search_form {
     background-color: red;
 }
-#myForm{
+
+#myForm {
     display: flex;
     background-color: #FFFFDE;
     border: none;
-    
 }
-#output{
+
+#output {
     color: black;
 }
-#rowrow{
+
+#rowrow {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
+
 #statsbox {
     display: flex;
     justify-content: center;
@@ -42,43 +46,45 @@
     width: 60%;
     flex-wrap: wrap;
 }
-#box1{
+
+#box1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    height: 85%;
+    height: 73%;
     width: 50%;
 }
-#zoekbalk{
+
+#zoekbalk {
     display: flex;
     justify-content: center;
     width: 290px;
     height: 50px;
-  
     margin-top: 80px;
+    margin-bottom: 167px;
 }
-#naaminbox{
-    display: flex;
 
+#naaminbox {
+    display: flex;
     width: 240px;
     height: 90px;
-  
     margin-top: 10px;
     margin-left: 50px;
     white-space: pre-line;
+    background: aqua;
 }
-#typebox{
+
+#typebox {
     display: flex;
     justify-content: center;
     width: 50px;
     height: 25px;
- 
     margin-top: 50px;
+}
 
-
-}#typebox2{
+#typebox2 {
     display: flex;
     justify-content: center;
     width: 55px;
@@ -90,7 +96,7 @@
 #box2 {
     display: flex;
     flex-wrap: wrap;
-    height: 85%;
+    height: 73%;
     width: 50%;
 }
 
@@ -101,26 +107,29 @@
     width: 150px;
     height: 250px;
     margin-top: 40px;
+    background: black;
 }
+
 #pokemonachterkant {
     display: flex;
     justify-content: center;
     width: 150px;
-    height: 250px;
-    margin-top: 40px;
-
+    height: 180px;
 }
+
 #naampokemon {
     display: flex;
     flex-wrap: wrap;
     height: 20px;
     width: 40px;
 }
-#all{
+
+#all {
     display: flex;
     width: 100vw;
 }
-#scrollstats{
+
+#scrollstats {
     display: flex;
     justify-content: start;
     align-items: end;
@@ -129,6 +138,7 @@
     margin-top: 6px;
     margin-bottom: 8px;
 }
+
 #nextpokemon {
     display: flex;
     justify-content: center;
@@ -138,6 +148,7 @@
     width: 26%;
     flex-wrap: wrap;
 }
+
 #backpokemon {
     display: flex;
     justify-content: center;
@@ -146,7 +157,8 @@
     color: cornflowerblue;
     width: 26%;
 }
-#boxybox{
+
+#boxybox {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -165,7 +177,8 @@
     height: 20px;
     width: auto;
 }
-.stats{
+
+.stats {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -174,20 +187,24 @@
     justify-content: end;
     white-space: pre-line;
 }
-.stack{
+
+.stack {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    
+
 }
+
 .background {
     background-color: black;
 }
-.row{
+
+.row {
     display: flex;
     flex-direction: row;
 }
-.overviewbox{
+
+.overviewbox {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -195,24 +212,28 @@
     height: 96px;
     width: 96px;
 }
-#overzicht{
+
+#overzicht {
     display: flex;
     flex-direction: row;
     align-content: center;
     justify-content: center;
     flex-wrap: wrap;
 }
-.midden{
+
+.midden {
     display: flex;
     justify-content: center;
 }
-.overview{
+
+.overview {
     display: flex;
     width: 34vw;
     flex-wrap: wrap;
     align-content: baseline;
 }
-#pokedex{
+
+#pokedex {
     display: flex;
     flex-direction: row;
 }
