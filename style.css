@@ -15,7 +15,6 @@
     height: 280px;
     width: 275px;
     background-color: gray;
-    border: hotpink 5px solid;
 
 }
 #search_form{
@@ -46,20 +45,18 @@
 #box1{
     display: flex;
     flex-wrap: wrap;
-justify-content: center;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
-    gap: 4px;
-    border: brown solid 5px;
-    height: 452px;
-    width: 470.1px;
+    height: 85%;
+    width: 50%;
 }
 #zoekbalk{
     display: flex;
     justify-content: center;
     width: 290px;
     height: 50px;
-    border: yellow solid 5px;
+  
     margin-top: 80px;
 }
 #naaminbox{
@@ -67,7 +64,7 @@ justify-content: center;
 
     width: 240px;
     height: 90px;
-    border: red solid 5px;
+  
     margin-top: 10px;
     margin-left: 50px;
     white-space: pre-line;
@@ -77,7 +74,7 @@ justify-content: center;
     justify-content: center;
     width: 50px;
     height: 25px;
-    border: blue solid 5px;
+ 
     margin-top: 50px;
 
 
@@ -86,7 +83,6 @@ justify-content: center;
     justify-content: center;
     width: 55px;
     height: 25px;
-    border: black solid 5px;
     margin-left: -60px;
     margin-top: 15px;
 }
@@ -94,41 +90,36 @@ justify-content: center;
 #box2 {
     display: flex;
     flex-wrap: wrap;
-
-    border: yellow solid 5px;
-    height: 452px;
-    width: 470.1px;
+    height: 85%;
+    width: 50%;
 }
 
 
 #pokemonvoorkant {
     display: flex;
     justify-content: start;
-
     width: 150px;
     height: 250px;
-    border: pink solid 5px;
     margin-top: 40px;
 }
 #pokemonachterkant {
     display: flex;
     justify-content: center;
-
     width: 150px;
     height: 250px;
-    border: pink solid 5px;
     margin-top: 40px;
 
 }
 #naampokemon {
     display: flex;
     flex-wrap: wrap;
-    border: grey solid 10px;
     height: 20px;
     width: 40px;
 }
-
-
+#all{
+    display: flex;
+    width: 100vw;
+}
 #scrollstats{
     display: flex;
     justify-content: start;
@@ -160,19 +151,13 @@ justify-content: center;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    width: 960px;
-    height: 629px;
+    width: 1248px;
+    height: 817px;
     border: blue solid 5px;
-    background-image: url("/photo/pokemon_background_FINAL_FORM.png");
+    background-image: url("/photo/pokemon_background.png");
     background-size: cover;
 
 }
-#pokedex{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
 
 #nextpage {
     color: cornflowerblue;
@@ -215,10 +200,19 @@ justify-content: center;
     flex-direction: row;
     align-content: center;
     justify-content: center;
-    width: 400px;
     flex-wrap: wrap;
 }
 .midden{
     display: flex;
     justify-content: center;
+}
+.overview{
+    display: flex;
+    width: 34vw;
+    flex-wrap: wrap;
+    align-content: baseline;
+}
+#pokedex{
+    display: flex;
+    flex-direction: row;
 }

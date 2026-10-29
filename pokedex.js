@@ -33,13 +33,16 @@ async function searchpokemon(search = document.getElementById("myForm").value) {
 
     document.getElementById("myForm").value = pokemons.name
     settypes(pokemons)
+    await makedivs()
     return pokemons
      }
 function nextpokemon(){
     searchpokemon(pokemonid + 1)
+    makedivs()
 }
 function backpokemon(){
     searchpokemon(pokemonid - 1)
+    makedivs()
     }
 function settypes(pokemons){
     document.getElementById("typebox").innerHTML = `<img alt="${pokemons.types[0].type.name}" src="/icons/${pokemons.types[0].type.name}.svg" height="30px" width="30px">`
@@ -75,6 +78,30 @@ function setstats2(){
         "SpAtk =" + `${pokemons.stats[3].base_stat}`  + "\r\n" +
         "Weight = " + `${pokemons.stats[5].base_stat}`  + "\r\n" +
         "SpDef=" + ` ${pokemons.stats[4].base_stat}`
+}
+async function makedivs() {
+    document.querySelectorAll(".overviewbox").forEach(img => img.remove());
+    
+    let requests = [];
+    for (let j = 0; j < 15; j++) {
+        requests.push(
+            fetch(`https://pokeapi.co/api/v2/pokemon/${pokemons.id + j}`)
+                .then(response => response.json())
+        );
+    }
+    let pokemonAll = await Promise.all(requests);
+    pokemonAll.forEach(pokemon => {
+        let div = document.createElement('div');
+        div.className = "overviewbox";
+        let a = document.createElement('a');
+        let img = document.createElement('img');
+        a.href = "podedex.html"
+        img.src = pokemon.sprites.front_default;
+        img.alt = pokemon.name;
+        div.appendChild(a);
+        a.appendChild(img);
+        document.getElementById("overzicht").appendChild(div);
+    });
 }
 document.querySelector("#myForm").addEventListener('keydown', function (keypress) {
     if (keypress.key === 'Enter') {
