@@ -26,6 +26,7 @@
     display: flex;
     background-color: #FFFFDE;
     border: none;
+    font-size: 2em;
 }
 
 #output {
@@ -43,8 +44,20 @@
     justify-content: center;
     text-align: center;
     color: cornflowerblue;
-    width: 60%;
+    width: 30%;
     flex-wrap: wrap;
+    margin-top: 25px;
+    font-size: 2em;
+}
+#statsbox2 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: cornflowerblue;
+    width: 30%;
+    flex-wrap: wrap;
+    margin-top: 25px;
+    font-size: 2em;
 }
 
 #box1 {
@@ -71,43 +84,43 @@
     width: 240px;
     height: 90px;
     margin-top: 10px;
-    margin-left: 50px;
     white-space: pre-line;
-    background: aqua;
+    font-size: 2em;
 }
 
 #typebox {
     display: flex;
     justify-content: center;
-    width: 50px;
-    height: 25px;
-    margin-top: 50px;
+    width: 30px;
+    height: 30px;
+    margin-top: 20px;
+    margin-left: 20px;
 }
 
 #typebox2 {
     display: flex;
     justify-content: center;
-    width: 55px;
-    height: 25px;
-    margin-left: -60px;
+    width: 30px;
+    height: 30px;
     margin-top: 15px;
+    margin-left: 20px;
 }
 
 #box2 {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
     height: 73%;
     width: 50%;
 }
 
-
 #pokemonvoorkant {
     display: flex;
-    justify-content: start;
     width: 150px;
-    height: 250px;
-    margin-top: 40px;
-    background: black;
+    height: 180px;
+    margin-top: 130px;
+    margin-left: 30px;
 }
 
 #pokemonachterkant {
@@ -135,27 +148,28 @@
     align-items: end;
     width: 10%;
     flex-wrap: wrap;
-    margin-top: 6px;
-    margin-bottom: 8px;
+    margin-bottom: 15px;
 }
 
 #nextpokemon {
     display: flex;
     justify-content: center;
-    align-self: center;
+    align-self: end;
     text-align: center;
     color: cornflowerblue;
     width: 26%;
     flex-wrap: wrap;
+    font-size: 2em;
+    margin-right: 50px;
 }
-
 #backpokemon {
     display: flex;
     justify-content: center;
-    align-self: center;
     text-align: center;
     color: cornflowerblue;
     width: 26%;
+    font-size: 2em;
+    margin-left: 35px;
 }
 
 #boxybox {
@@ -192,7 +206,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-
+    width: 30%;
 }
 
 .background {
@@ -203,6 +217,11 @@
     display: flex;
     flex-direction: row;
 }
+#naambox{
+    margin-right: 75px;
+    margin-top: 132px;
+}
+
 
 .overviewbox {
     display: flex;
@@ -236,4 +255,9 @@
 #pokedex {
     display: flex;
     flex-direction: row;
+}
+#typesbox{
+    height: 90px;
+    width: 30px;
+    flex-direction: column;
 }

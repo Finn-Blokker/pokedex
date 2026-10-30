@@ -9,6 +9,9 @@ async function searchpokemon(search = document.getElementById("myForm").value) {
         if (search === "0") {
             missingno()
         }
+        else if (search === "779" / "bruxish") {
+            bruxish()
+        }
         else {
         pokemons = await response.json()
         pokemonid = pokemons.id
@@ -30,11 +33,7 @@ async function searchpokemon(search = document.getElementById("myForm").value) {
     "id =" +`${pokemons.id}`
 
     
-    document.querySelector("#statsbox").textContent = "\r\n" +
-    "HP = " + `${pokemons.stats[0].base_stat}` +  "\r\n" + 
-    "Atk = " + `${pokemons.stats[1].base_stat}` + "\r\n" +
-    "Sp = " + `${pokemons.stats[5].base_stat}` + "\r\n" +
-    "Def = " + `${pokemons.stats[2].base_stat}` + "\r\n"
+    setstats()
 
     document.getElementById("myForm").value = pokemons.name
     settypes(pokemons)
@@ -63,26 +62,31 @@ function statschanger() {
 }
 function setstats(){
     const content = document.getElementById("statsbox")
+    const content2 = document.getElementById("statsbox2")
     document.getElementById("scrollstats").innerText = "⬇️"
     document.getElementById("scrollstats").style.alignItems = "end"
 
     content.className = "firstpage"
-    content.textContent = "\r\n" +
-        "HP = " + `${pokemons.stats[0].base_stat}` +  "\r\n" +
-        "Atk = " + `${pokemons.stats[1].base_stat}` + "\r\n" +
-        "Sp = " + `${pokemons.stats[5].base_stat}` + "\r\n" +
+    content.textContent =
+        "HP = " + `${pokemons.stats[0].base_stat}` +  "\r\n\r\n" +
+        "Spd = " + `${pokemons.stats[5].base_stat}` + "\r\n"
+    content2.textContent =
+        "Atk = " + `${pokemons.stats[1].base_stat}` + "\r\n\r\n" +
         "Def = " + `${pokemons.stats[2].base_stat}`
 }
 function setstats2(){
     const content = document.getElementById("statsbox")
+    const content2 = document.getElementById("statsbox2")
     document.getElementById("scrollstats").innerText = "️⬆️"
     document.getElementById("scrollstats").style.alignItems = "start"
     content.className = "secondpage"
-    content.textContent = "\r\n" +
-        "Height =" + `${pokemons.height}` + "\r\n" +
-        "SpAtk =" + `${pokemons.stats[3].base_stat}`  + "\r\n" +
-        "Weight = " + `${pokemons.stats[5].base_stat}`  + "\r\n" +
+    content.textContent =
+        "Height =" + `${pokemons.height}` + "\r\n\r\n" +
+        "Weight = " + `${pokemons.stats[5].base_stat}`  + "\r\n"
+    content2.textContent =
+        "SpAtk =" + `${pokemons.stats[3].base_stat}`  + "\r\n\r\n" +
         "SpDef=" + ` ${pokemons.stats[4].base_stat}`
+
 }
 async function makedivs() {
     document.querySelectorAll(".overviewbox").forEach(img => img.remove());
@@ -123,6 +127,24 @@ function missingno(){
         "Atk = 136" + "\r\n" +
         "Sp = 29" + "\r\n" +
         "Def = 0" 
+}
+function bruxish(){
+    pokemonid = 779;
+    document.querySelector("#pokemonachterkant").innerHTML =
+        "<img src='photo/bruxish-back.png' height='250' width='250'>";
+    document.querySelector("#pokemonvoorkant").innerHTML =
+        "<img src='photo/bruxish-front.png' height='250' width='250'>";
+    document.querySelector("#naaminbox").textContent =
+        `bruxish` + "\r\n" +
+        "id = 779"
+    document.getElementById("typebox").innerHTML =  "<img src='icons/water.svg' height='30' width='30'>";
+    document.getElementById("typebox2").innerHTML =  "<img src='icons/fairy.svg' height='30' width='30'>";
+    document.getElementById("statsbox").textContent =
+        "HP = 68" + "\r\n" +
+        "Sp = 92" + "\r\n"
+    document.getElementById("statsbox2").textContent =
+        "Atk = 105" + "\r\n" +
+        "Def = 70"
 }
 document.querySelector("#myForm").addEventListener('keydown', function (keypress) {
     if (keypress.key === 'Enter') {
