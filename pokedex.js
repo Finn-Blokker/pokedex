@@ -9,7 +9,10 @@ async function searchpokemon(search = document.getElementById("myForm").value) {
         if (search === "0") {
             missingno()
         }
-        else if (search === "779" / "bruxish") {
+        else if (search === "779") {
+            bruxish()
+        }
+        else if (search === "bruxish"){
             bruxish()
         }
         else {
