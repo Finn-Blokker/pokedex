@@ -118,9 +118,9 @@ async function makedivs() {
 function missingno(){
     pokemonid = 0;
     document.querySelector("#pokemonachterkant").innerHTML =
-        "<img src='photo/MissingNoMirrored.png' height='250' width='250'>";
+        "<img src='photo/MissingNoLeft.png' height='250' width='250'>";
     document.querySelector("#pokemonvoorkant").innerHTML =
-        "<img src='photo/MissingNo.png' height='250' width='250'>";
+        "<img src='photo/MissingNoRight.png' height='250' width='250'>";
     document.querySelector("#naaminbox").textContent =
         `missingno` + "\r\n" +
         "id = missingno"
