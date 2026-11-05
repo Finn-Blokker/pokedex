@@ -1,7 +1,7 @@
 let pokemons;
 let pokemonid = 0;
 window.addEventListener("load", function () {
-    console.log("de pagina is geladen!")
+    console.log("het doet het!")
 });
 async function searchpokemon(search = document.getElementById("myForm").value) {
         let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${String(search).trim().toLowerCase()}`);
@@ -49,8 +49,15 @@ function backpokemon(){
     makedivs()
     }
 function settypes(pokemons){
-    document.getElementById("typebox").innerHTML = `<img alt="${pokemons.types[0].type.name}" src="/icons/${pokemons.types[0].type.name}.svg" height="30px" width="30px">`
-    document.getElementById("typebox2").innerHTML = `<img alt="${pokemons.types[1].type.name}" src="/icons/${pokemons.types[1].type.name}.svg" height="30px" width="30px">`
+    document.getElementById("typebox").innerHTML =
+        `<img alt="${pokemons.types[0].type.name}" src="/icons/${pokemons.types[0].type.name}.svg" height="30" width="30">`;
+
+    if (pokemons.types.length > 1) {
+        document.getElementById("typebox2").innerHTML =
+            `<img alt="${pokemons.types[1].type.name}" src="/icons/${pokemons.types[1].type.name}.svg" height="30" width="30">`;
+    } else {
+        document.getElementById("typebox2").innerHTML = "";
+    }
 }
 function statschanger() {
     const content = document.getElementById("statsbox");
